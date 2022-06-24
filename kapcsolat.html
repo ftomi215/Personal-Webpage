@@ -7,6 +7,11 @@
     <link rel="icon" href="images/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
+      @import 'https://fonts.googleapis.com/css?family=Ubuntu';
+    
+      body{
+        font-family: Ubuntu, Arial, Helvetica, sans-serif;
+      }
       .map-container{
         overflow:hidden;
         padding-bottom:56.25%;
@@ -38,11 +43,25 @@
       }
       div>a:link{
         text-decoration: none;
-        color: black;
+        color: white;
       }
       body{
         display:grid;
         min-height:100vh;
+      }
+      .btn {
+        background-color: darkgray;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      /* Darker background on mouse-over */
+      .btn:hover {
+        background-color: rgb(40, 36, 44);
+        color: white;
       }
       footer{
         position: relative;
@@ -75,9 +94,12 @@
         text-align: center;
         margin-bottom: 1em;
       }
+      main{
+        color: white;
+      }
     </style>
   </head>
-  <body style="background-color: rgb(228, 228, 228);">
+  <body style="background-color: rgb(7, 57, 56, 0.924);">
     
     <header>
     <nav class="navbar navbar-expand bg-dark navbar-dark p-3 fixed-top">
@@ -205,6 +227,7 @@
           </form>
 
           <div class="text-center text-md-left">
+            <!--<a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Küldés</a>-->
             <a class="btn btn-primary" onclick="validateForm();">Küldés</a>
           </div>
           <div class="status"></div>
@@ -220,6 +243,7 @@
 
 
 </article>
+
 
 <script>
   function validateForm() {
@@ -250,6 +274,8 @@
       return false;
   }
   document.querySelector('.status').innerHTML = "Küldés...";
+  document.getElementById('contact-form').submit();
+  //location.reload();
 }
 </script>
 
